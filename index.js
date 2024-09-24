@@ -46,7 +46,6 @@ app.post('/api/users/:_id/exercises', async (req, res) => {
   var user = await userModel.findById(id);
   if (req.body.date == null) var date = new Date().toDateString();
   else var date = new Date(req.body.date).toDateString();
-  console.log(date);
   var exerciseProto = new exerciseModel({
     username: user.username,
     description: req.body.description,
